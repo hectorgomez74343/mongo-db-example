@@ -50,7 +50,6 @@ const getProduct = async (req, res, next) => {
     product = await db.collection("products").findOne({
       $or: [{ _id: id }],
     });
-    console.log(product, "product");
   } catch (error) {
     return res.json({ message: "Could not retrieve product." });
   }
